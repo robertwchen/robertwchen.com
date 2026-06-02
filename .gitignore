@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.asset-cache/
+.qa/
+overleaf_source/
+resume_overleaf_zip/
+public/work/
+robert_resume_overleaf_master.zip
+*.log
+.env
+.env.*
+!.env.example

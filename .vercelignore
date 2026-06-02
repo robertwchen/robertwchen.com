@@ -1,0 +1,9 @@
+.asset-cache/
+.qa/
+overleaf_source/
+resume_overleaf_zip/
+public/work/
+robert_resume_overleaf_master.zip
+node_modules/
+dist/
+.git/

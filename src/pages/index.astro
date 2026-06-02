@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { about, drives, experience, expertise, funFact, hero, links, projects, resumeUpdated, skills } from '../data/profile';
+
+const description =
+  'Robert Chen is a recent UVA computer engineering and electrical engineering graduate building software, robotics, computer vision, mobile, and full-stack systems.';
+
+const pinnedProjects = projects.slice(0, 4);
+const moreProjects = projects.slice(4);
+---
+
+<BaseLayout title="Robert Chen | Portfolio" description={description}>
+  <a class="skip-link" href="#main">skip to content</a>
+  <header class="site-header" aria-label="Primary">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true">RC</span>
+      <span>Robert Chen</span>
+    </a>
+    <nav aria-label="Main menu">
+      <a href="/">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
+      <a href="#experience">Experience</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="intro-section">
+      <div class="intro-copy">
+        <h1 class="title">Hello, I'm Robert.</h1>
+        <p>
+          {hero.summary}
+        </p>
+        <p>I'm a recent UVA computer engineering + electrical engineering graduate.</p>
+        <div class="social-list" aria-label="Find Robert online">
+          <p>Find me on</p>
+          <ul>
+            <li><a href={links.github}>Github</a></li>
+            <li><a href={links.linkedin}>LinkedIn</a></li>
+            <li><a href={links.email}>Email</a></li>
+            <li><a href={links.resume}>Resume</a></li>
+          </ul>
+        </div>
+        <p class="muted">Software resume updated {resumeUpdated}</p>
+      </div>
+      <figure class="profile-frame">
+        <img
+          src="/profile-photo.jpg"
+          alt="Robert Chen"
+          width="160"
+          height="160"
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+    </section>
+
+    <section id="work" class="block-section">
+      <h2 class="title small">Pinned Projects</h2>
+      <ul class="post-list" role="list">
+        {pinnedProjects.map((project) => (
+          <li>
+            <span class="item-meta">{project.category}</span>
+            <div>
+              {project.href ? (
+                <a class="cactus-link" href={project.href}>{project.title}</a>
+              ) : (
+                <span class="project-title">{project.title}</span>
+              )}
+              <q>{project.summary}</q>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="block-section">
+      <h2 class="title small">Projects</h2>
+      <ul class="post-list compact" role="list">
+        {moreProjects.map((project) => (
+          <li>
+            <span class="item-meta">{project.category}</span>
+            {project.href ? (
+              <a class="cactus-link" href={project.href}>{project.title}</a>
+            ) : (
+              <span class="project-title">{project.title}</span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="about" class="block-section">
+      <h2 class="title small">About</h2>
+      <div class="prose-lite">
+        {about.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+        <blockquote>{funFact}</blockquote>
+      </div>
+    </section>
+
+    <section class="block-section">
+      <h2 class="title small">Core Expertise</h2>
+      <ul class="tag-list" role="list">
+        {expertise.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="experience" class="block-section">
+      <h2 class="title small">Experience</h2>
+      <ul class="timeline-list" role="list">
+        {experience.map((item) => (
+          <li>
+            <span class="item-meta">{item.period}</span>
+            <article>
+              <h3>{item.role}</h3>
+              <p class="muted">{item.org}</p>
+              <p>{item.summary}</p>
+              <ul class="inner-list">
+                {item.achievements.slice(0, 2).map((achievement) => (
+                  <li>{achievement}</li>
+                ))}
+              </ul>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="block-section">
+      <h2 class="title small">Notes</h2>
+      <ul class="note-list" role="list">
+        {drives.map((drive) => (
+          <li>
+            <h3>{drive.title}</h3>
+            <p>{drive.text}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="skills" class="block-section">
+      <h2 class="title small">Skills</h2>
+      <ul class="tag-list" role="list">
+        {skills.map((skill) => (
+          <li>{skill}</li>
+        ))}
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Robert Chen 2026. robertwchen.com</p>
+    <nav aria-label="Footer links">
+      <a href="/">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
+      <a href="#experience">Experience</a>
+    </nav>
+  </footer>
+</BaseLayout>
