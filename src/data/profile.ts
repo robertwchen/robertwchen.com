@@ -5,7 +5,7 @@ export const links = {
   resume: '/resume.pdf'
 };
 
-export const resumeUpdated = 'May 26, 2026';
+export const resumeUpdated = 'November 9, 2026';
 
 export const hero = {
   intro: "Hello, I'm",
@@ -17,7 +17,7 @@ export const hero = {
 
 export const about = [
   'I recently graduated from the University of Virginia in Computer Engineering and Electrical Engineering. I like working across the boundary between software and hardware: web products, ML/CV tools, cloud systems, mobile apps, and embedded prototypes.',
-  'Recently, I have worked on AWS infrastructure automation at Verint, computer vision research for tennis broadcast analysis at UVA, and full-stack tools for real estate operations.',
+  'I build software at Accenture Federal Services. My previous work includes AWS infrastructure automation at Verint, computer vision for tennis broadcast analysis at UVA, and full-stack tools for real estate operations.',
   'Outside of engineering, I founded the Yo-Yo Club at UVA, helped with sports in the Taiwanese Student Association, and love playing pickleball and tennis.'
 ];
 
@@ -47,6 +47,18 @@ export const drives = [
 
 export const experience = [
   {
+    org: 'Accenture Federal Services',
+    role: 'Software Engineer (Analyst)',
+    period: 'Aug 2026 - Present',
+    summary:
+      'Developing Java and Spring Boot services and tools for benefits processing.',
+    achievements: [
+      'Designed the architecture for a benefits processing microservice.',
+      'Implemented a REST service that evaluates business rules and matched legacy results in all 28 integration tests for one benefits workflow.'
+    ],
+    stack: ['Java', 'Spring Boot', 'REST APIs', 'Maven']
+  },
+  {
     org: 'Verint',
     role: 'DevOps Cloud Automation Engineer Intern',
     period: 'May 2025 - Nov 2025',
@@ -62,9 +74,9 @@ export const experience = [
   {
     org: 'Visual Intelligence Lab, UVA',
     role: 'Research Assistant, ML & Computer Vision',
-    period: 'Sep 2025 - Present',
+    period: 'Sep 2025 - May 2026',
     summary:
-      'Building computer vision and data pipelines for tennis broadcast analysis and serve-performance evaluation.',
+      'Built computer vision and data pipelines for tennis broadcast analysis and serve-performance evaluation.',
     achievements: [
       'Developed a Python OCR pipeline that extracts JSON match state from tennis broadcast score overlays.',
       'Used OpenCV, Tesseract OCR, temporal smoothing, and finite-state-machine logic to make noisy visual state machine-readable.',
